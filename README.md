@@ -23,7 +23,7 @@ All AWS Lambda functions are written in **Python** to ensure scalability, reliab
 - Reservation details are stored in DynamoDB; garage slot availability auto-updated.  
 - Driver receives a **confirmation email** with a temporary **ticket link** (HTML in S3, expires after reservation period).  
 - After expiry → scheduled Lambda deletes ticket and frees the slot automatically.  
-![Garage Reservation Workflow](Diagrams/Feature 1 (6).jpg)
+![Garage Reservation Workflow](Diagrams/Feature%201%20(6).jpg)
 - **Importance:** Saves time, avoids congestion, prevents forgotten reservations.  
 
 ###  Low-Battery Charging Assistance (V2I)  
