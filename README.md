@@ -15,6 +15,7 @@ All AWS Lambda functions are written in **Python** to ensure scalability, reliab
 - **Escalation:** If no response → Lambda escalates alert to:  
   - Nearest hospital (email via SES).  
   - Nearby cars in same **geohash** (push via SNS).  
+![Health Alert Workflow](C:\Users\ASC\Downloads\Heart_rate_alert_diagram.PNG)
 - **Importance:** Enables early medical intervention and ensures surrounding drivers can assist.  
 
 ###  Smart Garage Reservation (V2I)  
@@ -22,11 +23,13 @@ All AWS Lambda functions are written in **Python** to ensure scalability, reliab
 - Reservation details are stored in DynamoDB; garage slot availability auto-updated.  
 - Driver receives a **confirmation email** with a temporary **ticket link** (HTML in S3, expires after reservation period).  
 - After expiry → scheduled Lambda deletes ticket and frees the slot automatically.  
+![Garage Reservation Workflow](C:\Users\ASC\Downloads\Feature 1 (6).jpg)
 - **Importance:** Saves time, avoids congestion, prevents forgotten reservations.  
 
 ###  Low-Battery Charging Assistance (V2I)  
 - If battery level is low, system finds the **nearest charging station** from DynamoDB using geohash lookup.  
 - Location returned instantly to driver through app.  
+![Charging Station Workflow](C:\Users\ASC\Downloads\image-Photoroom.png)
 - **Importance:** Avoids vehicle breakdown in critical places (e.g., highways, tunnels).  
 
 ---
