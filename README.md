@@ -6,6 +6,24 @@ The system connects vehicles, infrastructure, and cloud services to provide **re
 All AWS Lambda functions are written in **Python** to ensure scalability, reliability, and maintainability.  
 
 ---
+### 🔐 Authentication & Notifications Setup  
+
+Before any feature can work, the system must associate each car with a unique **Firebase token** for push notifications.  
+
+- **Driver login (Kodular App):**  
+  The driver enters their Car ID in the app.  
+
+- **Token registration:**  
+  The app requests a new token from Firebase and sends it (with Car ID) to **API Gateway** (POST request).  
+
+- **AWS Lambda (Python):**  
+  Stores the Car ID → Token mapping in the `Cars_tokens` DynamoDB table.  
+  It also registers the token as an **SNS endpoint**, so alerts can be delivered directly to that driver.  
+
+
+📂 [See Lambda Code](lambda_functions/token_registration_lambda.py)
+
+---
 
 ##  Key Features  
 
